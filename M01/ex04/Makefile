@@ -1,0 +1,51 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ssukhija <ssukhija@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/03/27 16:54:26 by ssukhija          #+#    #+#              #
+#    Updated: 2026/03/27 16:54:26 by ssukhija         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+.SILENT:
+
+#colours
+RESET = \033[;0m
+RED = \033[1;31m
+GREEN = \033[1;32m
+YELLOW = \033[1;33m
+
+NAME = replace
+
+#compile
+CPP = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+RM = rm -rf
+
+#files
+SRCS = main.cpp
+OBJ = $(SRCS:.cpp=.o)
+
+all:$(NAME)
+
+$(NAME): $(OBJ)
+	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+	printf "Linking executable $(GREEN)[ok]$(RESET)\n"
+
+%.o: %.cpp
+	$(CPP) $(CFLAGS) -c $< -o $@
+
+clean:
+	$(RM) $(OBJ)
+	printf "cleaning object files $(YELLOW)[ok]$(RESET)\n"
+
+fclean: clean
+	$(RM) $(NAME)
+	printf "cleaning program $(YELLOW)[ok]$(RESET)\n"
+
+re: fclean all
+
+.PHONY: all clean fclean re
