@@ -14,24 +14,24 @@
 
 Animal::Animal() : _type("Animal")
 {
-    std::cout << "Animal Default construtor called" << std::endl;
+    std::cout << BLUE << "Animal Default construtor called" << RESET << std::endl;
 }
 
 Animal::Animal(std::string type)
 {
-    std::cout << "Animal Type constructor called for " << type << std::endl; 
+    std::cout << BLUE  << "Animal Type constructor called for " << RESET << type << std::endl; 
     this->_type = type;
 }
 
 Animal::Animal(const Animal &other)
 {
-    std::cout << "Animal Copy constructor called";
+    std::cout << BLUE << "Animal Copy constructor called" << RESET << std::endl;
     *this = other;
 }
 
 Animal &Animal::operator=(const Animal &other)
 {
-    std::cout << "Animal assigment operator called" << std::endl;
+    std::cout << BLUE << "Animal assigment operator called" << RESET << std::endl;
     if (this != &other)
         this->_type = other._type;
     return *this;
@@ -39,12 +39,12 @@ Animal &Animal::operator=(const Animal &other)
 
 Animal::~Animal()
 {
-    std::cout << "Animal destructor called" << std::endl;
+    std::cout << BLUE << "Animal destructor called" << RESET << std::endl;
 }
 
 void Animal::makeSound() const
 {
-    std::cout << "* Animal noise *" << std::endl;
+    std::cout << BLUE << "* Animal noise *" << RESET << std::endl;
 }
 
 std::string Animal::getType() const

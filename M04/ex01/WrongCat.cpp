@@ -28,7 +28,7 @@ WrongCat &WrongCat::operator=(const WrongCat &other)
 {
     std::cout << "WrongCat assignment constructor called" << std::endl;
     if (this != &other)
-        this->_type = other._type;
+        WrongAnimal::operator=(other);
     return *this;
 }
 
@@ -39,5 +39,5 @@ WrongCat::~WrongCat()
 
 void WrongCat::makeSound() const
 {
-    std::cout << "WrongCat Meow!";
+    std::cout << RED << "WrongCat Meow!" << RESET << std::endl;
 }

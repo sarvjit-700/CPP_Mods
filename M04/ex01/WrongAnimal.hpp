@@ -13,6 +13,9 @@
 #ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
 
+#define RESET "\033[;0m"
+#define RED "\033[1;31m"
+
 #include <iostream>
 #include <string>
 
