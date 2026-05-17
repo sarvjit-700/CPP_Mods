@@ -16,6 +16,7 @@
 #include <iostream>
 
 int main()
+
 {
     std::cout << GREEN << "=========================================" << RESET << std::endl;
     std::cout << GREEN << "    TEST 1: MANDATORY ANIMAL ARRAY TEST  " << RESET << std::endl;
@@ -82,9 +83,10 @@ int main()
     std::cout << GREEN << "    TEST 3: DEEP COPY VERIFICATION (ASSIGNMENT)  " << RESET << std::endl;
     std::cout << GREEN << "=========================================" << RESET << std::endl;
 
-    std::cout << "\n--- Creating two independent Cats ---" << std::endl;
+    std::cout << "\n--- Creating three independent Cats ---" << std::endl;
     Cat catA;
     Cat catB;
+    Cat catC;
     std::cout << "Set Idea for catA: Catch the red laser dot!" << std::endl;
     catA.getBrain()->setIdea(0, "Catch the red laser dot!");
     
@@ -97,8 +99,13 @@ int main()
 
     std::cout << "\n--- Displaying Ideas ---" << std::endl;
     std::cout << "Cat A Idea 0: " << catA.getBrain()->getIdea(0) << std::endl;
-    std::cout << "Cat B Idea 0: " << catB.getBrain()->getIdea(0) << " <-- MUST BE RED LASER DOT!" << std::endl;
+    std::cout << "Cat B Idea 0: " << catB.getBrain()->getIdea(0) << " <-- MUST BE RED LASER DOT!\n" << std::endl;
+    
+    std::cout << "* Set Idea for catC at Index [120]" << std::endl;
+    catC.getBrain()->setIdea(-1, "I want to destroy the couch.");
+    std::cout << "Display Cat C Idea 120: \n" << catC.getBrain()->getIdea(120) << std::endl;
 
     std::cout << "\n--- Exiting Program (Stack cleanup for Cat A and Cat B) ---" << std::endl;
+
     return 0;
 }
