@@ -102,7 +102,7 @@ int main()
     std::cout << "Cat B Idea 0: " << catB.getBrain()->getIdea(0) << " <-- MUST BE RED LASER DOT!\n" << std::endl;
     
     std::cout << "* Set Idea for catC at Index [120]" << std::endl;
-    catC.getBrain()->setIdea(-1, "I want to destroy the couch.");
+    catC.getBrain()->setIdea(120, "I want to destroy the couch.");
     std::cout << "Display Cat C Idea 120: \n" << catC.getBrain()->getIdea(120) << std::endl;
 
     std::cout << "\n--- Exiting Program (Stack cleanup for Cat A and Cat B) ---" << std::endl;
