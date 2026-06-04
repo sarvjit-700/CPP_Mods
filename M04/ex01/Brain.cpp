@@ -48,16 +48,25 @@ Brain::~Brain()
 void    Brain::setIdea(int index, std::string idea)
 {
     if (index >= 0 && index < 100)
+    {
         this->ideas[index] = idea;
-    std::cerr << "[Brain Error] Index " << index 
+        std::cout << "[Brain] Idea set at index " << index << ": " << idea << std::endl;
+    }
+    else
+    {
+        std::cerr << "[Brain Error] Index " << index 
             << " out of bounds! Cannot set idea." 
             << std::endl;
+    }
+    return ;
 }
 
 std::string Brain::getIdea(int index) const
 {
     if (index >= 0 && index < 100)
+    {
         return (this->ideas[index]);
+    }
     std::cerr << "[Brain Error] Index " << index 
         << " out of bounds! Returning empty string." 
         << std::endl;

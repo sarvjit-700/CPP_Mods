@@ -28,7 +28,7 @@ int main()
     delete i;
 
     std::cout << "\n--- Trying to Instantiate Abstract Class ---" << std::endl;
-    // UNCOMMENTING THE LINE BELOW MUST CAUSE A COMPILATION ERROR!
+    // UNCOMMENTING THE LINE BELOW SHOULD CAUSE A COMPILATION ERROR!
     //const Animal* testAbstract = new Animal(); 
 
     return 0;

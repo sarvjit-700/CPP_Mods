@@ -32,9 +32,11 @@ int main()
     std::cout << "- output animal noise:" << std::endl;
     meta->makeSound();
     std::cout << "Clean heap" << std::endl;
+   
     delete meta;
     delete j;
     delete i;
+    
 
     std::cout << "\n--- Testing Copy and Assignment ---" << std::endl;
     std::cout << "Create 2 more Dog objects, OG and CopyOG" << std::endl;
@@ -74,6 +76,6 @@ int main()
     delete wc; 
     delete wanml;
 
-    std::cout << "Call Destructors for OG, CopyOG and tmp" << std::endl;
+    std::cout << "\n\nCall Destructors for OG, CopyOG and tmp" << std::endl;
     return 0;
 }

@@ -22,7 +22,7 @@ int main()
     std::cout << GREEN << "    TEST 1: MANDATORY ANIMAL ARRAY TEST  " << RESET << std::endl;
     std::cout << GREEN << "=========================================" << RESET << std::endl;
     
-    const int arraySize = 4;
+    const int arraySize = 5;
     Animal* animals[arraySize];
 
     std::cout << "\n--- Creating and filling the array (Half Dogs, Half Cats) ---" << std::endl;
@@ -65,7 +65,7 @@ int main()
     Dog* cloneDog = new Dog(*originalDog);
 
     std::cout << "\n--- Changing Original Dog's ideas to test deep copy independence ---" << std::endl;
-    std::cout << "Change Ideas: I am sleepy now..., No more treats." << std::endl;
+    std::cout << "Change Ideas to: I am sleepy now..., No more treats." << std::endl;
     originalDog->getBrain()->setIdea(0, "I am sleepy now...");
     originalDog->getBrain()->setIdea(1, "No more treats.");
 
@@ -90,7 +90,7 @@ int main()
     std::cout << "Set Idea for catA: Catch the red laser dot!" << std::endl;
     catA.getBrain()->setIdea(0, "Catch the red laser dot!");
     
-    std::cout << "\n--- Assigning Cat A to Cat B ---" << std::endl;
+    std::cout << "\n--- Assigning Cat A to Cat B, (destroy Cat B's brain before copying Cat A's brain) ---" << std::endl;
     catB = catA;
 
     std::cout << "\n--- Changing Cat A's idea ---" << std::endl;
@@ -105,7 +105,7 @@ int main()
     catC.getBrain()->setIdea(120, "I want to destroy the couch.");
     std::cout << "Display Cat C Idea 120: \n" << catC.getBrain()->getIdea(120) << std::endl;
 
-    std::cout << "\n--- Exiting Program (Stack cleanup for Cat A and Cat B) ---" << std::endl;
+    std::cout << "\n--- Exiting Program (Stack cleanup for Cats) ---" << std::endl;
 
     return 0;
 }

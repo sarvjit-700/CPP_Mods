@@ -44,7 +44,7 @@ Cat &Cat::operator=(const Cat &other)
 
 Cat::~Cat()
 {
-    std::cout << GREEN << "Cat Destructor called. Cat Brain destroyed." << RESET << std::endl;
+    std::cout << GREEN << "Cat Destructor called. Destory the Brain." << RESET << std::endl;
     delete this->_brain;
 }
 
